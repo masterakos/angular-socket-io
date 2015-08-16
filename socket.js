@@ -44,6 +44,12 @@ angular.module('btford.socket-io', []).
           on: addListener,
           addListener: addListener,
           once: addOnceListener,
+          get connected () {
+            return socket.connected;
+          },
+          get disconnected () {
+            return socket.disconnected;
+          },
 
           emit: function (eventName, data, callback) {
             var lastIndex = arguments.length - 1;
